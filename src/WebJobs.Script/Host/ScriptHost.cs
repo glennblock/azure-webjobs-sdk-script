@@ -324,6 +324,10 @@ namespace Microsoft.Azure.WebJobs.Script
                 case BindingType.DocumentDB:
                     bindingMetadata = binding.ToObject<DocumentDBBindingMetadata>();
                     break;
+                case BindingType.ApiHub:
+                case BindingType.ApiHubTrigger:
+                    bindingMetadata = binding.ToObject<ApiHubBindingMetadata>();
+                    break;
             }
 
             bindingMetadata.Type = bindingType;

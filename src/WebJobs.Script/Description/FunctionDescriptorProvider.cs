@@ -140,6 +140,9 @@ namespace Microsoft.Azure.WebJobs.Script.Description
                 case BindingType.ManualTrigger:
                     triggerParameter = ParseManualTrigger(triggerMetadata, methodAttributes);
                     break;
+                case BindingType.ApiHubTrigger:
+                    triggerParameter = ParseApiHubTrigger((ApiHubBindingMetadata)triggerMetadata, methodAttributes, typeof(HttpRequestMessage));
+                    break;
             }
 
             Collection<ParameterDescriptor> parameters = new Collection<ParameterDescriptor>();
@@ -350,6 +353,37 @@ namespace Microsoft.Azure.WebJobs.Script.Description
 
             ConstructorInfo ctorInfo = typeof(NoAutomaticTriggerAttribute).GetConstructor(new Type[0]);
             CustomAttributeBuilder attributeBuilder = new CustomAttributeBuilder(ctorInfo, new object[0]);
+            methodAttributes.Add(attributeBuilder);
+
+            string parameterName = trigger.Name;
+            return new ParameterDescriptor(parameterName, triggerParameterType);
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
+        protected ParameterDescriptor ParseApiHubTrigger(ApiHubBindingMetadata trigger, Collection<CustomAttributeBuilder> methodAttributes, Type triggerParameterType = null)
+        {
+            if (trigger == null)
+            {
+                throw new ArgumentNullException("trigger");
+            }
+
+            if (methodAttributes == null)
+            {
+                throw new ArgumentNullException("methodAttributes");
+            }
+
+            if (triggerParameterType == null)
+            {
+                triggerParameterType = typeof(string);
+            }
+
+            ConstructorInfo ctorInfo = typeof(NoAutomaticTriggerAttribute).GetConstructor(new Type[0]);
+            CustomAttributeBuilder attributeBuilder = new CustomAttributeBuilder(ctorInfo, new object[0]);
+            methodAttributes.Add(attributeBuilder);
+
+            ctorInfo = typeof(TraceLevelAttribute).GetConstructor(new Type[] { typeof(TraceLevel) });
+            attributeBuilder = new CustomAttributeBuilder(ctorInfo, new object[] { TraceLevel.Off });
             methodAttributes.Add(attributeBuilder);
 
             string parameterName = trigger.Name;

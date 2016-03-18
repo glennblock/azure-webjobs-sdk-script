@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FD93A1ED-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{FF9C0818-30D3-437A-A62D-7A61CA44F459}"
 	ProjectSection(SolutionItems) = preProject
-		sample\host.json = sample\host.json
+		..\..\Downloads\Functions\host.json = ..\..\Downloads\Functions\host.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobs.Script.Tests", "test\WebJobs.Script.Tests\WebJobs.Script.Tests.csproj", "{38C609D3-B126-43B0-B9D8-6D62FAEE2ABC}"
@@ -184,6 +184,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DocumentDB-Node", "Document
 		sample\DocumentDB-Node\index.js = sample\DocumentDB-Node\index.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiHubTrigger-CSharp", "ApiHubTrigger-CSharp", "{A308340E-16AC-47DA-9402-A279F681D5F3}"
+	ProjectSection(SolutionItems) = preProject
+		sample\ApiHubTrigger-CSharp\function.json = sample\ApiHubTrigger-CSharp\function.json
+		sample\ApiHubTrigger-CSharp\run.csx = sample\ApiHubTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -246,5 +252,6 @@ Global
 		{87E44645-EA02-4F12-8C3E-820B5710292D} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
 		{437EB182-8CB9-42BD-9019-E5F6E69D1DB3} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
 		{8811DCFB-1023-4577-AB9C-B4F191200082} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
+		{A308340E-16AC-47DA-9402-A279F681D5F3} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
 	EndGlobalSection
 EndGlobal

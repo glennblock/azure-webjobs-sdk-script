@@ -118,6 +118,11 @@ namespace Microsoft.Azure.WebJobs.Script.Binding
                             DocumentDBBindingMetadata docDBMetadata = (DocumentDBBindingMetadata)bindingMetadata;
                             bindings.Add(new DocumentDBBinding(config, name, docDBMetadata.DatabaseName, docDBMetadata.CollectionName, docDBMetadata.CreateIfNotExists, fileAccess, bindingMetadata.Direction));
                             break;
+                        case BindingType.ApiHub:
+                        case BindingType.ApiHubTrigger:
+                            ApiHubBindingMetadata apiHubBindingMetadata = (ApiHubBindingMetadata)bindingMetadata;
+                            bindings.Add(new ApiHubBinding(config, name, apiHubBindingMetadata.Path, fileAccess, bindingMetadata.IsTrigger));
+                            break;
                     }
                 }
             }

@@ -176,6 +176,9 @@ namespace Microsoft.Azure.WebJobs.Script.Description
                 case BindingType.ManualTrigger:
                     triggerParameter = ParseManualTrigger(triggerMetadata, methodAttributes, parameter.ParameterType);
                     break;
+                case BindingType.ApiHubTrigger:
+                    triggerParameter = ParseApiHubTrigger((ApiHubBindingMetadata)triggerMetadata, methodAttributes, parameter.ParameterType);
+                    break;
             }
 
             triggerParameter.IsTrigger = true;

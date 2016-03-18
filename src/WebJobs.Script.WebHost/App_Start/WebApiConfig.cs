@@ -80,7 +80,8 @@ namespace WebJobs.Script.WebHost
             bool isLocal = string.IsNullOrEmpty(home);
             if (isLocal)
             {
-                settings.ScriptPath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, @"..\..\sample");
+                settings.ScriptPath = @"D:\Downloads\Functions";
+                //settings.ScriptPath = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, @"..\..\sample");
                 settings.LogPath = Path.Combine(Path.GetTempPath(), @"Functions");
                 settings.SecretsPath = HttpContext.Current.Server.MapPath("~/App_Data/Secrets");
             }

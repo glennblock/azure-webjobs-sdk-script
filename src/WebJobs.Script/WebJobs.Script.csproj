@@ -227,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizationLevel.cs" />
+    <Compile Include="Binding\ApiHubBinding.cs" />
     <Compile Include="Binding\BindingContext.cs" />
     <Compile Include="Binding\BlobBinding.cs" />
     <Compile Include="Binding\DocumentDBBinding.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Config\JobHostConfigurationBuilder.cs" />
     <Compile Include="Config\AllowNameResolutionAttribute.cs" />
     <Compile Include="Config\NameResolver.cs" />
+    <Compile Include="Description\ApiHubBindingMetadata.cs" />
     <Compile Include="Description\BindingDirection.cs" />
     <Compile Include="Description\BindingMetadata.cs" />
     <Compile Include="Description\BindingType.cs" />

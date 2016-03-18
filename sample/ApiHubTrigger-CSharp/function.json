@@ -1,0 +1,16 @@
+{
+  "bindings": [
+    {
+      "type": "apiHubTrigger",
+      "name": "dropbox",
+      "direction": "in",
+      "path": "cdpFiles/{name}"
+    },
+    {
+      "type": "apiHub",
+      "name": "dropbox",
+      "direction": "out",
+      "path": "test/{name}"
+    }
+  ]
+}
