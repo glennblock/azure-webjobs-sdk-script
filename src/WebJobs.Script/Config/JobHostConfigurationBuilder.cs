@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See License.txt in the project root for license information.
 
 using Microsoft.Azure.WebJobs.ServiceBus;
+using WebJobs.Extensions.Splunk.Config;
 
 namespace Microsoft.Azure.WebJobs.Script.Description
 {
@@ -24,6 +25,7 @@ namespace Microsoft.Azure.WebJobs.Script.Description
             this.Config.UseEasyTables();
             this.Config.UseDocumentDB();
             this.Config.UseNotificationHubs();
+            this.Config.UseSplunk();
         }
     }
 }
