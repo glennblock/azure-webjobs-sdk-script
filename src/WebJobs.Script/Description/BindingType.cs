@@ -20,6 +20,7 @@ namespace Microsoft.Azure.WebJobs.Script.Description
         TimerTrigger,
         EasyTable,
         DocumentDB,
-        NotificationHub
+        NotificationHub,
+        SplunkHttpEventCollector
     }
 }

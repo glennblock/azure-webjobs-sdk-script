@@ -109,6 +109,10 @@ namespace Microsoft.Azure.WebJobs.Script.Binding
                             NotificationHubBindingMetadata notificationHubMetadata = (NotificationHubBindingMetadata)bindingMetadata;
                             bindings.Add(new NotificationHubBinding(config, notificationHubMetadata, fileAccess));
                             break;
+                        case BindingType.SplunkHttpEventCollector:
+                            var splunkHtpEventCollectorMetadata = (SplunkHttpEventCollectorBindingMetadata)bindingMetadata;
+                            bindings.Add(new SplunkHttpEventCollectorBinding(config, splunkHtpEventCollectorMetadata, fileAccess));
+                            break;
                     }
                 }
             }

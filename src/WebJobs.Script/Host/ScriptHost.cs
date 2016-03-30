@@ -363,6 +363,9 @@ namespace Microsoft.Azure.WebJobs.Script
                 case BindingType.NotificationHub:
                     bindingMetadata = binding.ToObject<NotificationHubBindingMetadata>();
                     break;
+                case BindingType.SplunkHttpEventCollector:
+                    bindingMetadata = binding.ToObject<SplunkHttpEventCollectorBindingMetadata>();
+                    break;
             }
 
             bindingMetadata.Type = bindingType;
