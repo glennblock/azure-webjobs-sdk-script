@@ -214,6 +214,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpTrigger-Disabled", "Htt
 		sample\HttpTrigger-Disabled\index.js = sample\HttpTrigger-Disabled\index.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SplunkHttpEventCollector-CSharp", "SplunkHttpEventCollector-CSharp", "{17FB3330-5928-4B7C-A8BC-114508738401}"
+	ProjectSection(SolutionItems) = preProject
+		sample\SplunkHttpEventCollector-CSharp\function.json = sample\SplunkHttpEventCollector-CSharp\function.json
+		sample\SplunkHttpEventCollector-CSharp\run.csx = sample\SplunkHttpEventCollector-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SplunkHttpEventCollector-Node", "SplunkHttpEventCollector-Node", "{D0E6F284-D155-49BD-A75A-CDEDB55C9CE2}"
+	ProjectSection(SolutionItems) = preProject
+		sample\SplunkHttpEventCollector-Node\function.json = sample\SplunkHttpEventCollector-Node\function.json
+		sample\SplunkHttpEventCollector-Node\index.js = sample\SplunkHttpEventCollector-Node\index.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -281,5 +293,7 @@ Global
 		{ACEE40C6-DA72-422E-99B6-2FA3824733CE} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
 		{DC1805CF-39CE-40E3-9F3A-E7C7DAD52B7E} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
 		{97B9DB7D-8014-46A0-9E51-6C02A99E4D38} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
+		{17FB3330-5928-4B7C-A8BC-114508738401} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
+		{D0E6F284-D155-49BD-A75A-CDEDB55C9CE2} = {FF9C0818-30D3-437A-A62D-7A61CA44F459}
 	EndGlobalSection
 EndGlobal

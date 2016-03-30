@@ -237,6 +237,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebJobs.Extensions.Splunk">
+      <HintPath>..\..\..\azure-webjobs-sdk-extensions-splunk\src\WebJobs.Extensions.Splunk\bin\Debug\WebJobs.Extensions.Splunk.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizationLevel.cs" />
@@ -283,6 +286,7 @@
     <Compile Include="Description\QueueBindingMetadata.cs" />
     <Compile Include="Description\ScriptType.cs" />
     <Compile Include="Description\ServiceBusBindingMetadata.cs" />
+    <Compile Include="Description\SplunkHttpEventCollectorBindingMetadata.cs" />
     <Compile Include="Description\TableBindingMetadata.cs" />
     <Compile Include="Description\TimerBindingMetadata.cs" />
     <Compile Include="Diagnostics\FastLogger.cs" />
@@ -316,6 +320,7 @@
     <Compile Include="Config\ScriptHostConfiguration.cs" />
     <Compile Include="Config\TypeLocator.cs" />
     <Compile Include="ScriptHostFactory.cs" />
+    <Compile Include="Binding\SplunkHttpEventCollectorBinding.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>

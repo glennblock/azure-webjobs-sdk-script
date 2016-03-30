@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +22,9 @@ namespace Microsoft.Azure.WebJobs.Script.Description
         public string Source { get; set; }
 
         /// <summary>
-        /// Sourcetype which will be assigned to each event
+        /// SourceType which will be assigned to each event
         /// </summary>
-        public string Sourcetype { get; set; }
+        public string SourceType { get; set; }
 
         /// <summary>
         /// Index where each event will be stored

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -23,7 +26,7 @@ namespace Microsoft.Azure.WebJobs.Script
         {
             Host = metadata.Host;
             Source = metadata.Source;
-            Sourcetype = metadata.Sourcetype;
+            SourceType = metadata.SourceType;
             Index = metadata.Index;
 
             _bindingDirection = metadata.Direction;
@@ -40,9 +43,9 @@ namespace Microsoft.Azure.WebJobs.Script
         public string Source { get; set; }
 
         /// <summary>
-        /// Sourcetype which will be assigned to each event
+        /// SourceType which will be assigned to each event
         /// </summary>
-        public string Sourcetype { get; set; }
+        public string SourceType { get; set; }
 
         /// <summary>
         /// Index where each event will be stored
@@ -59,12 +62,12 @@ namespace Microsoft.Azure.WebJobs.Script
 
         public override Collection<CustomAttributeBuilder> GetCustomAttributes()
         {
-            var attributeType = typeof (SplunkHttpEventCollectorAttribute);
+            var attributeType = typeof(SplunkHttpEventCollectorAttribute);
             var props = new[]
             {
                 attributeType.GetProperty("Host"),
                 attributeType.GetProperty("Source"),
-                attributeType.GetProperty("Sourcetype"),
+                attributeType.GetProperty("SourceType"),
                 attributeType.GetProperty("Index")
             };
 
@@ -72,14 +75,14 @@ namespace Microsoft.Azure.WebJobs.Script
             {
                 Host,
                 Source,
-                Sourcetype,
+                SourceType,
                 Index
             };
 
             var constructor = attributeType.GetConstructor(System.Type.EmptyTypes);
             return new Collection<CustomAttributeBuilder>()
             {
-                new CustomAttributeBuilder(constructor, new object[] {}, props, propValues)
+                new CustomAttributeBuilder(constructor, new object[] { }, props, propValues)
             };
         }
 
@@ -92,7 +95,7 @@ namespace Microsoft.Azure.WebJobs.Script
                 {
                     Host = Host,
                     Source = Source,
-                    Sourcetype = Sourcetype,
+                    SourceType = SourceType,
                     Index = Index
                 };
 
@@ -109,6 +112,5 @@ namespace Microsoft.Azure.WebJobs.Script
                 await collector.AddAsync(inputString);
             }
         }
-
     }
 }

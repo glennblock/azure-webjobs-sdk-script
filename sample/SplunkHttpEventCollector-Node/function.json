@@ -1,0 +1,17 @@
+﻿{
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 * * * * *",
+      "runOnStartup": true
+    },
+    {
+      "type": "splunkHttpEventCollector",
+      "direction": "out",
+      "name": "splunkEvent",
+      "host":  "localhost",
+      "source": "azure:function"
+    }
+  ]
+}
